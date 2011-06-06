@@ -1,0 +1,10 @@
+{
+    "name": "Domänspecifika språk i Ruby",
+    "sections": [
+      {"section":"introduction"},
+      {"section":"ruby"},
+      {"section":"delta"},
+      {"section":"sinatra"},
+      {"section":"rspec"}
+    ]
+}
