@@ -1,3 +1,3 @@
 !SLIDE 
-# Domänspecifika språk i Ruby #
+# Domain Specific Languages in Ruby #
 ## Johan Stille @ Delta Projects ##
