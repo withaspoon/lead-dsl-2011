@@ -1,10 +1,5 @@
 require 'developer'
-
-RSpec::Matchers.define :know do |language|
-  match do |developer|
-    developer.language.split(", ").any? { |l| l == language }
-  end
-end
+require 'matchers/know'
 
 describe LeadDeveloper do
   let(:developer) { LeadDeveloper.new(:company => "Oracle", :language => "Java") }
@@ -14,11 +9,15 @@ describe LeadDeveloper do
   end
   
   it "should know a programming language" do
-    developer.language.should == "Java"
+    developer.should know "Java"
   end
   
   it "should learn new programming languages" do
     developer.learn "Ruby"
-    developer.should know "Ruby"
+    developer.should know "Java", "Ruby"
+  end
+  
+  it "should not know every programming language" do
+    developer.should_not know "C++"
   end
 end
